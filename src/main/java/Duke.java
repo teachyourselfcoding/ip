@@ -8,29 +8,35 @@ public class Duke {
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
+        request();
         //Generates a greeting
         //greeting();
+
+
+    }
+
+    public static void request(){
         Scanner in = new Scanner(System.in);
+        String[] list = new String[100];
         String line;
+
+        int i=0,j=0;
+
         while(true) {
             line = in.nextLine();
             if (line.equals("bye")){
                 System.out.println("Bye. Hope to see you again soon!");
                 break;
-            } else {
-                System.out.println(line);
+            }else if(line.equals("list")){
+                for(j=0;j<i;j++){
+                    System.out.println((j+1)+". "+list[j]);
+                }
+            }else {
+                list[i] = line;
+                System.out.println("added: "+ line);
+                i++;
             }
         }
-
     }
 
-    public static void greeting(){
-        String line = "____________________________________________________________";
-        System.out.println(line);
-        System.out.println(" Hello! I'm Duke");
-        System.out.println(" What can I do for you?");
-        System.out.println(line);
-        System.out.println(" Bye. Hope to see you again soon!");
-        System.out.println(line);
-    }
 }
