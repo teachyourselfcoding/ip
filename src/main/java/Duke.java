@@ -32,30 +32,49 @@ public class Duke {
     }
 
     public static void todo(String line){
-        list[listCount] = new ToDo(line);
-        System.out.println("Got it. I've added this task:");
-        System.out.println(list[listCount]);
-        System.out.println("Now you have " + listCount + " tasks in the list");
-        listCount++;
+        try {
+            list[listCount] = new ToDo(line);
+            System.out.println("Got it. I've added this task:");
+            System.out.println(list[listCount]);
+            System.out.println("Now you have " + listCount + " tasks in the list");
+            listCount++;
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("____________________________________________________________\n" +
+                    "0x00002639 OOPS!!! The description of a todo cannot be empty.");
+            System.out.println("____________________________________________________________\n");
+        }
     }
 
     public static void Event(String line){
-        int index = line.indexOf('/');
-        list[listCount] = new Event(line.substring(0,index-1),line.substring(index+1));
-        System.out.println("Got it. I've added this task:");
-        System.out.println(list[listCount]);
-        System.out.println("Now you have " + listCount + " tasks in the list");
-        listCount++;
+        try{
+            int index = line.indexOf('/');
+            list[listCount] = new Event(line.substring(0, index - 1), line.substring(index + 1));
+            System.out.println("Got it. I've added this task:");
+            System.out.println(list[listCount]);
+            System.out.println("Now you have " + listCount + " tasks in the list");
+            listCount++;
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("____________________________________________________________\n" +
+                    "☹ OOPS!!! The description of an event cannot be empty.");
+            System.out.println("____________________________________________________________\n");
+        }
     }
 
     public static void Deadline(String line){
-        int index = line.indexOf('/');
-        list[listCount] = new Deadline(line.substring(0,index-1),line.substring(index+1));
-        System.out.println("Got it. I've added this task:");
-        System.out.println(list[listCount]);
-        System.out.println("Now you have " + listCount + " tasks in the list");
-        listCount++;
+        try {
+            int index = line.indexOf('/');
+            list[listCount] = new Deadline(line.substring(0, index - 1), line.substring(index + 1));
+            System.out.println("Got it. I've added this task:");
+            System.out.println(list[listCount]);
+            System.out.println("Now you checkBoundsBeginEnd(have " + listCount + " tasks in the list");
+            listCount++;
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("____________________________________________________________\n" +
+                    "☹ OOPS!!! The description of a deadline cannot be empty.");
+            System.out.println("____________________________________________________________\n");
+        }
     }
+
 
     public static void greet(){
         System.out.println("Hello! I'm Duke");
@@ -87,11 +106,16 @@ public class Duke {
                 case "deadline":
                     Deadline(line.substring(9));
                     break;
+                //case "delete":
+
                 default:
                     System.out.println("Command not supported");
+                    break;
             }
         }
     }
+
+
 
 
 
