@@ -1,7 +1,8 @@
 public class Task {
     protected String description;
+    protected char type;
     protected boolean isDone;
-    protected String deadline;
+    protected String date;
     protected int listCount;
 
 
@@ -9,14 +10,18 @@ public class Task {
         this.description = description;
         this.isDone = false;
         this.listCount = 0;
-        this.deadline = " none";
+        this.type = ' ';
+        this.date = " none";
     }
     public String statusicon(){
+
         return (this.isDone?"[✓]":"[✗]");
     }
-    public void markDone(){
-        this.isDone = true;
-    }
+//    public void markDone(){
+//        this.isDone = true;
+//    }
+
+
     @Override
     public String toString(){
         return  statusicon() + description;

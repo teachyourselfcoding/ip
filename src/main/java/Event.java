@@ -1,11 +1,11 @@
 public class Event extends Task {
-    public Event(String description, String deadline) {
+    public Event(String description, String date) {
         super(description);
-        this.deadline=deadline;
+        this.date=date;
     }
 
     @Override
     public String toString() {
-        return "[E]" + super.toString()+ "(" + this.deadline + ")";
+        return "[E]" + super.toString()+ "(" + this.date + ")";
     }
 }
