@@ -14,6 +14,9 @@ public class Task {
     public String statusicon(){
         return (this.isDone?"[✓]":"[✗]");
     }
+    public void markDone(){
+        this.isDone = true;
+    }
     @Override
     public String toString(){
         return  statusicon() + description;
