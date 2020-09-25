@@ -11,7 +11,7 @@ public class Task {
         this.isDone = false;
         this.listCount = 0;
         this.type = ' ';
-        this.date = " none";
+        this.date = " ";
     }
     public String statusicon(){
 

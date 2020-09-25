@@ -14,7 +14,8 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class Duke {
-    public static final String filePath = "duke.txt";
+    public final static String FILE_DIR = "data";
+    public final static String FILE_PATH = "data/data.txt";
     public static int listCount = 0;
     public static ArrayList<Task> list = new ArrayList<>();
 
@@ -118,7 +119,9 @@ public class Duke {
 
 
     public static void fileLoad() throws IOException {
-        File dataFile = new File(filePath);
+
+
+        File dataFile = new File(FILE_PATH);
         if (dataFile.createNewFile()) {
             System.out.println("Since the file does not exist, I have created a file for you.");
         }
@@ -126,27 +129,32 @@ public class Duke {
 
         while (dataScanner.hasNext()) {
             String data = dataScanner.nextLine();
-            String type = data.substring(0,1);
-            String info = data.substring(8);
-            int dateIndex = info.indexOf('|');
-            switch(type){
+            String info = data.substring(4);
+            int infoIndex = (info.indexOf("|") + 2);
+            int dateIndex = (info.substring(infoIndex)).indexOf("|")+infoIndex+2;
+            boolean done =  info.substring(0, infoIndex-3).equals("true");
+
+            switch(data.substring(0,1)){
                 case "D":
-                    Task newDeadline = new Deadline(info.substring(0, dateIndex), info.substring(dateIndex + info.length()-1));
+                    Task newDeadline = new Deadline(info.substring(infoIndex, dateIndex-3), info.substring(dateIndex));
                     newDeadline.type = 'D';
-                    newDeadline.isDone = data.charAt(4)=='1';
+                    newDeadline.isDone = done;
                     list.add(newDeadline);
+                    listCount++;
                     break;
                 case "T":
-                    Task newTodo = new ToDo(info);
+                    Task newTodo = new ToDo(info.substring(infoIndex));
                     newTodo.type = 'T';
-                    newTodo.isDone = data.charAt(4)=='1';
+                    newTodo.isDone = done;
                     list.add(newTodo);
+                    listCount++;
                     break;
                 case "E":
-                    Task dateEvent = new Event(info.substring(0, dateIndex), info.substring(dateIndex + info.length()-1));
-                    dateEvent.type = 'D';
-                    dateEvent.isDone = data.charAt(4)=='1';
-                    list.add(dateEvent);
+                    Task newEvent = new Event(info.substring(infoIndex, dateIndex-3), info.substring(dateIndex));
+                    newEvent.type = 'D';
+                    newEvent.isDone = done;
+                    list.add(newEvent);
+                    listCount++;
                     break;
                 default:
                     break;
@@ -155,8 +163,7 @@ public class Duke {
 
     }
     public static void Save(){
-        final String FILE_DIR = "data";
-        final String FILE_PATH = "data/data.txt";
+
 
         FileWriter writer;
         File fileDir = new File(FILE_DIR);
