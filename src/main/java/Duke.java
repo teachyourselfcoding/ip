@@ -111,6 +111,17 @@ public class Duke {
         System.out.println("Now you have: " + list.size() + " task(s) in your list!");
     }
 
+    public static void Find (String description){
+        int findCount = 0;
+        System.out.println(" Here are the matching tasks in your list: ");
+        for(int i =0; i<listCount;i++){
+                Task task = list.get(i);
+                if((task.description).contains(description)){
+                        findCount++;
+                        System.out.println(findCount + "." + task);
+                }
+        }
+    }
 
     public static void greet(){
         System.out.println("Hello! I'm Duke");
@@ -216,6 +227,8 @@ public class Duke {
                 case "save":
                     Save();
                     break;
+                case "find":
+                    Find(line.substring(5));
                 default:
                     System.out.println("I don't know what that means");
                     break;
