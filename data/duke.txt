@@ -1,0 +1,6 @@
+T | true | eat |  
+E | false | meeting | 1pm
+D | false | test  | 3pm
+E | false | dinner  | 6pm
+D | true | wakeup | today
+T | false | live |  
