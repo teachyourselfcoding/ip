@@ -1,15 +1,15 @@
+package Task;
+
 public class Task {
-    protected String description;
-    protected char type;
-    protected boolean isDone;
-    protected String date;
-    protected int listCount;
+    public String description;
+    public char type;
+    public boolean isDone;
+    public String date;
 
 
     public Task(String description) {
         this.description = description;
         this.isDone = false;
-        this.listCount = 0;
         this.type = ' ';
         this.date = " ";
     }
