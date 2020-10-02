@@ -1,161 +1,20 @@
-﻿# User Guide
+# User Guide
 
 ## Features 
 
-### 1. Add Todo
-Add a todo task to your task list.
-
-### 2. Add Deadline
-Add a deadline task to your task list with relevant time.
-
-### 3. Add Event
-Add an event to your task list with relevant time.
-
-### 4. Mark task as Done
-Mark a task in your task list as done.
-
-### 5. List all tasks
-List out all tasks in your task list in order.
-
-### 6. Delete task
-Delete a task from your task list.
-
-### 7. Find task
-Find tasks containing any form of a keyword.
-
-### 8. Save task list
-Save your task list to a .txt file.
-
-### 8. Save task list
-Load your task list from a .txt file.
-
+### Feature 1 
+Description of feature.
 
 ## Usage
 
-### `todo <task description>` - Add a Todo task
+### `Keyword` - Describe action
 
-Add a Todo task to your task list.
+Describe action and its outcome.
 
-Example of usage:
+Example of usage: 
 
-`todo read book`
-
-Expected outcome:
-
-`____________________________________________________________
-Got it. I've added this task: `
-`[T][✗] read book`
-`Now you have 1 tasks in the list.`
-`____________________________________________________________`
-
-### `event <task description> /at <date>` - Add an Event
-
-Add an Event task to your task list with relevant time.
-
-Example of usage:
-
-`event meeting /10am`
+`keyword (optional arguments)`
 
 Expected outcome:
 
-`____________________________________________________________
-Got it. I've added this task: `
-`[E][✘] meeting (10am)`
-`Now you have 2 tasks in the list.`
-`____________________________________________________________`
-
-### `deadline <task description> /by <date>` - Add a Deadline
-
-Add a Deadline task to your task list.
-
-Example of usage:
-
-`deadline Assignment 2 /Monday 2359`
-
-Expected outcome:
-
-`____________________________________________________________
-Got it. I've added this task: `
-`[D][✗] Assignment 2 (Monday 2359)`
-`Now you have 3 tasks in the list.`
-`____________________________________________________________`
-
-
-
-
-
-
-### `done <task index>` - Mark task as done
-
-Mark a task in your task list as done.
-
-Example of usage:
-
-`done 1`
-
-Expected outcome:
-
-`____________________________________________________________
-Nice! I've marked this task as done: `
-`[[T][✓] read book`
-`____________________________________________________________`
-
-### `list` - List all tasks
-
-List all tasks in your task list.
-
-Example of usage:
-
-`list`
-
-Expected outcome:
-
-`____________________________________________________________
-Here are the tasks in your list: `
-`1. [T][✓] read book`
-`2. [E][✘] meeting (10am)`
-`3. [D][✘] Assignment 2 (Monday 2359)`
-`____________________________________________________________`
-
-### `delete <task index>` - Delete a task
- 
-Delete a task from your task list.
-
-Example of usage:
-
-`delete 1`
-
-Expected outcome:
-
-`____________________________________________________________`
-`Removed: [T][✓] read book`
-`Now you have 2 task(s) in your list`
-`____________________________________________________________`
-
-### `find <keyword>` - Find tasks
-
-Find tasks with matching keyword.
-
-Example of usage:
-
-`find read`
-
-Expected outcome:
-
-
-`Here are the matching tasks in your list: `
-`1. [D][✘] Go through lecture readings (Tuesday before lecture)`
-`2. [E][✘] Reading habit fair (Tuesday 10pm)`
-
-### `save` - Save task list
-
-Save task list to .txt file.
-
-Example of usage:
-
-`save`
-
-Expected outcome:
-
-	`Successfully saved to file!`
-
+`outcome`
